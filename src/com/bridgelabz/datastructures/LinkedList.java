@@ -22,6 +22,7 @@ public class LinkedList<E> {
             System.out.print(temp.key + " -> ");
             temp = temp.next;
         }
+        System.out.println("");
     }
 
     public void append(E key) {
@@ -50,6 +51,13 @@ public class LinkedList<E> {
                 System.out.println("Element not inserted ");
             }
         }
+    }
+
+    public void popFirst() {
+        Node<E> temp = head;
+        head = head.next;
+        temp.next = null;
+        System.out.println("First element removed successfully");
     }
 }
 
