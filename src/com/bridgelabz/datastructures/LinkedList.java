@@ -85,5 +85,21 @@ public class LinkedList<E> {
         }
         return false;
     }
+
+    public void addElement(E insertElement, E searchElement) {
+        Node<E> temp = head;
+        Node<E> newNode = new Node<>(insertElement);
+        while (temp.next != null) {
+            if (temp.key == searchElement) {
+                Node<E> temp2 = temp.next;
+                temp.next = newNode;
+                newNode.next = temp2;
+            }
+            else{
+                System.out.println("Element not found");
+            }
+            temp = temp.next;
+        }
+    }
 }
 
