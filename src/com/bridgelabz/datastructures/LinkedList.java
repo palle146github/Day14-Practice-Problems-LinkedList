@@ -5,21 +5,20 @@ public class LinkedList<E> {
     Node<E> head;
     Node<E> tail;
 
-    public void push( E key){
+    public void push(E key) {
         Node<E> newNode = new Node<>(key);
-        if( head == null){
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else{
+        } else {
             newNode.next = head;
             head = newNode;
         }
     }
 
-    public void display(){
-        Node<E> temp =head;
-        while( temp != null){
+    public void display() {
+        Node<E> temp = head;
+        while (temp != null) {
             System.out.print(temp.key + " -> ");
             temp = temp.next;
         }
@@ -27,13 +26,30 @@ public class LinkedList<E> {
 
     public void append(E key) {
         Node<E> newNode = new Node<>(key);
-        if( head == null){
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else{
+        } else {
             tail.next = newNode;
             tail = newNode;
+        }
+    }
+
+    public void insert(E key, E data) {
+        Node<E> newNode = new Node<>(data);
+        Node<E> temp = head;
+        while (temp != null) {
+            if (temp.key == key) {
+                Node<E> tempNext = temp.next;
+                temp.next = newNode;
+                newNode.next = tempNext;
+                System.out.println("Element inserted Successfully");
+                break;
             }
+            else{
+                System.out.println("Element not inserted ");
+            }
+        }
     }
 }
+
