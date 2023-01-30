@@ -7,8 +7,13 @@ public class LinkedListMain {
         integerLinkedList.append(56);
         integerLinkedList.append(30);
         integerLinkedList.append(70);
-        integerLinkedList.display();
-        integerLinkedList.popFirst();
+        boolean b = integerLinkedList.searchKey(30);
+        if( b ){
+            System.out.println("Element found");
+        }
+        else{
+            System.out.println("Element not found");
+        }
         integerLinkedList.display();
 
 

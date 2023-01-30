@@ -46,8 +46,7 @@ public class LinkedList<E> {
                 newNode.next = tempNext;
                 System.out.println("Element inserted Successfully");
                 break;
-            }
-            else{
+            } else {
                 System.out.println("Element not inserted ");
             }
         }
@@ -58,6 +57,33 @@ public class LinkedList<E> {
         head = head.next;
         temp.next = null;
         System.out.println("First element removed successfully");
+    }
+
+    public Node popLast() {
+        Node<E> temp = head;
+        if (temp == null) {
+            return null;
+        }
+        if (temp.next == null) {
+            return null;
+        }
+        while (temp.next != null) {
+            temp = temp.next;
+            temp.next = null;
+            System.out.println("Last element removed successfully");
+        }
+        return head;
+    }
+
+    public boolean searchKey(E searchKey) {
+        Node<E> temp = head;
+        while (temp.next != null) {
+            if (temp.key == searchKey) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
     }
 }
 
