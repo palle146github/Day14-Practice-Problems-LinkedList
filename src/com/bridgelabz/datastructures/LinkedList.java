@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructures;
 
-public class LinkedList<E> {
+public class LinkedList<E extends Comparable<E>> {
 
     Node<E> head;
     Node<E> tail;
@@ -146,7 +146,7 @@ public class LinkedList<E> {
             append(Key);
         }else {
             Node<E> temp = head;
-            for(int i = 0; i< position - 1; i++) {
+            for(int i = 0; i < position - 1; i++) {
                 temp = temp.next;
             }
             Node<E> temp1 = temp.next;

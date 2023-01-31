@@ -14,8 +14,9 @@ public class SortedLinkedList<E extends Comparable<E>> {
         int position = 0;
         Node<E> temp = list.head;
         for(int i = 0; i < list.size(); i++) {
-            if(list.searchNode(i).key.compareTo(Key)>0) {
+            if(temp.key.compareTo(Key) > 0) {
                 position = i;
+                break;
             }else {
                 position = i+1;
             }
