@@ -60,7 +60,7 @@ public class LinkedList<E> {
     }
 
     public Node popLast() {
-        Node<E> temp = head;
+        Node<E> temp = head, prev = null;
         if (temp == null) {
             return null;
         }
@@ -68,11 +68,11 @@ public class LinkedList<E> {
             return null;
         }
         while (temp.next != null) {
+            prev = temp;
             temp = temp.next;
-            temp.next = null;
-            System.out.println("Last element removed successfully");
         }
-        return head;
+        prev.next = null;
+        return tail;
     }
 
     public boolean searchKey(E searchKey) {
@@ -103,10 +103,9 @@ public class LinkedList<E> {
     }
 
     public int size() {
-
         Node<E> temp = head;
         int size = 0;
-        while (temp.next != null) {
+        while (temp != null) {
             size++;
             temp = temp.next;
         }
@@ -114,14 +113,11 @@ public class LinkedList<E> {
     }
 
     void deleteNode(E key) {
-
         Node<E> temp = head, prev = null;
-
         if (temp != null && temp.key == key) {
             head = temp.next; // Changed head
             return;
         }
-
         while (temp != null && temp.key != key) {
             prev = temp;
             temp = temp.next;

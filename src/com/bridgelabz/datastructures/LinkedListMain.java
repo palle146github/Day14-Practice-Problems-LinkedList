@@ -8,9 +8,9 @@ public class LinkedListMain {
         integerLinkedList.append(30);
         integerLinkedList.append(40);
         integerLinkedList.append(70);
-        integerLinkedList.append(38);
         integerLinkedList.display();
-        integerLinkedList.deleteNode(40);
+        System.out.println("size of list is " + integerLinkedList.size());
+        integerLinkedList.deleteNode(30);
         integerLinkedList.display();
         System.out.println("size of list is " + integerLinkedList.size());
 
