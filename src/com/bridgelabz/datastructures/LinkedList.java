@@ -101,5 +101,36 @@ public class LinkedList<E> {
             temp = temp.next;
         }
     }
+
+    public int size() {
+
+        Node<E> temp = head;
+        int size = 0;
+        while (temp.next != null) {
+            size++;
+            temp = temp.next;
+        }
+        return size;
+    }
+
+    void deleteNode(E key) {
+
+        Node<E> temp = head, prev = null;
+
+        if (temp != null && temp.key == key) {
+            head = temp.next; // Changed head
+            return;
+        }
+
+        while (temp != null && temp.key != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+        if (temp == null)
+            return;
+        prev.next = temp.next;
+    }
 }
+
+
 

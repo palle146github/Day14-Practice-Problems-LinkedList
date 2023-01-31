@@ -6,9 +6,13 @@ public class LinkedListMain {
 
         integerLinkedList.append(56);
         integerLinkedList.append(30);
+        integerLinkedList.append(40);
         integerLinkedList.append(70);
+        integerLinkedList.append(38);
         integerLinkedList.display();
-        integerLinkedList.addElement(40,30);
+        integerLinkedList.deleteNode(40);
         integerLinkedList.display();
+        System.out.println("size of list is " + integerLinkedList.size());
+
     }
 }
