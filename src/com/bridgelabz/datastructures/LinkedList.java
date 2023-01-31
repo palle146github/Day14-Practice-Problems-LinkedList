@@ -126,4 +126,33 @@ public class LinkedList<E> {
             return;
         prev.next = temp.next;
     }
+
+    public Node<E> searchNode(int index){
+        Node<E> temp = head;
+        for(int i = 0; i<size(); i++) {
+            if(i == index) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null; // This will be used if your statement is false and need to retuen something
+    }
+
+    public boolean addAtPosition(int position, E Key) {
+        Node<E> newNode = new Node<>(Key);
+        if(position == 0) {
+            push(Key);
+        }else if(position == size()) {
+            append(Key);
+        }else {
+            Node<E> temp = head;
+            for(int i = 0; i< position - 1; i++) {
+                temp = temp.next;
+            }
+            Node<E> temp1 = temp.next;
+            temp.next = newNode;
+            newNode.next = temp1;
+        }
+        return true;
+    }
 }
