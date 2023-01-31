@@ -10,7 +10,7 @@ public class LinkedListMain {
         integerLinkedList.append(70);
         integerLinkedList.display();
         System.out.println("size of list is " + integerLinkedList.size());
-        integerLinkedList.deleteNode(30);
+        integerLinkedList.popLast();
         integerLinkedList.display();
         System.out.println("size of list is " + integerLinkedList.size());
 

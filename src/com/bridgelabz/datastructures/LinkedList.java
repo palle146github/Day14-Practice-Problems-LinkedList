@@ -127,6 +127,3 @@ public class LinkedList<E> {
         prev.next = temp.next;
     }
 }
-
-
-
